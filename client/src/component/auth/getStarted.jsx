@@ -24,7 +24,7 @@ const GetStarted = props => {
     e.preventDefault();
     validateFields((err, values) => {
       if (!err) {
-        console.log(values);
+       
         if (values.password !== values.password2) {
           message.error('password mismatch');
         } else {
@@ -39,7 +39,7 @@ const GetStarted = props => {
     });
   };
 
-  //if (isAuth) return <Redirect to="/start" />;
+  if (isAuth) return <Redirect to="/start" />;
   const { Title } = Typography;
   return (
     <div className="form-container card">

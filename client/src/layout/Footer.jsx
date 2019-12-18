@@ -9,7 +9,7 @@ const topHeader = () => {
   const { Text } = Typography;
   return (
     <Layout>
-      <Footer className="hide-sm text-center" style={{ height: '50' }}>
+      <Footer className=" text-center" style={{ height: '50' }}>
         <Text>made with </Text>
         <Icon type="heart" theme="filled" style={{color:'#eb2f96'}} />{' '}
         <Text strong>
