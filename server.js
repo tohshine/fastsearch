@@ -5,7 +5,7 @@ const fileUploader = require('express-fileupload');
 
 app.use(express.json({ extended: false }));
 app.use(fileUploader());
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
   res.send('<h1>welcome to fast search</h1>');
