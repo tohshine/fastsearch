@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const database = require('./config/db');
 const fileUploader = require('express-fileupload');
+const path = require('path');
 
 app.use(express.json({ extended: false }));
 app.use(fileUploader());
