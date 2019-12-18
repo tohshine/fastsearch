@@ -127,7 +127,7 @@ router.put('/:id', middleware, uploads, async (req, res) => {
       if (address) updateAccount.address = address;
       if (location) updateAccount.location = location;
       if (imageUrl)
-        updateAccount.imageUrl = `http://localhost:3000/${filePath}`;
+        updateAccount.imageUrl = `https://fastsearch.herokuapp.com/${filePath}`;
 
       if (cord_lat) updateAccount.cord_lat = cord_lat;
       if (cord_long) updateAccount.cord_long = cord_long;
