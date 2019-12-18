@@ -72,7 +72,7 @@ export const editProfile = (id, editedProfile) => async dispatch => {
 export const getAllEnt = () => async dispatch => {
   try {
     const res = await axios.get('/search');
-    console.log('ent data', res);
+   
 
     if (res.data === undefined) return;
     dispatch({

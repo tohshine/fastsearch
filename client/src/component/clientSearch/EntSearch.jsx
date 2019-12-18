@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SearchItem from './searchItem';
-import calculate from '../calculator';
-import Spinner from '../../layout/Spinner2';
+
 import {
   Form,
   Input,
   Icon,
-  Alert,
+
   Button,
   Typography,
   Spin,
-  message,
+ 
   Select
 } from 'antd';
 import { connect } from 'react-redux';
@@ -30,9 +29,9 @@ const EntSearch = props => {
   useEffect(() => {
     props.getAllEnt();
     props.ClearFilter();
-    console.log('cleanup');
+   
     return () => {
-      console.log('cleanup');
+     
     };
   }, []);
 
@@ -48,7 +47,7 @@ const EntSearch = props => {
   };
 
   const onChange = e => {
-    console.log(e.target.value);
+    
 
     props.filterCompany(e.target.value);
   };
@@ -91,7 +90,7 @@ const EntSearch = props => {
             </Form.Item>
           </Form>
         </div>
-        <div className="card bg-light">
+        <div className="card">
           {allProfile === null ? (
             <div className="text-center">
               {' '}

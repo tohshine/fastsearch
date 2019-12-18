@@ -29,7 +29,7 @@ const BioData = props => {
     wrapperCol: { span: 14 }
   };
   const { values, onhandleChange, nextStep, geoAddress, state } = props;
-  console.log(values);
+ 
 
   //? antd api
   const { validateFields, getFieldDecorator } = props.form;
@@ -44,9 +44,9 @@ const BioData = props => {
     if (userLoc.location === '') return errorNotification();
     validateFields((err, values) => {
       if (!err) {
-        console.log(values);
+       
 
-        console.log(userLoc);
+       
         onhandleChange(values);
         nextStep();
       }

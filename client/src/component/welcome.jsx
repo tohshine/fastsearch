@@ -5,61 +5,45 @@ import { Link } from 'react-router-dom';
 const welcome = () => {
   const { Title, Text } = Typography;
   return (
-    <div className="container">
-      <div className="grid-2">
+    <div className="container" >
+      <div className="grid-2" style={{alignItems:"center",justifyContent:"center" ,marginTop:100}}>
         <div className="card bg-light">
           <Title level={4} className="text-dark">
-            Fast Search To Locate Any Buisness Enterprice Around You{' '}
-            <span className="text-danger">Enterprise</span>
+            Fast Search To Locate Any Buisness{' '}
+            <span className="text-danger">Enterprise</span> Around You{' '}
           </Title>
-          <Title level={4} type="secondary">
-            Get what you need by using this services
-          </Title>
+
           <div className="grid-2">
             <div>
               <div>
                 <Icon type="home" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Hotels
-                </Title>
+                <Text strong>Hotels</Text>
               </div>
               <div>
                 <Icon type="insurance" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Finance
-                </Title>
+                <Text strong>Finance</Text>
               </div>
               <div>
                 <Icon type="shop" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  mall
-                </Title>
+                <Text strong>mall</Text>
               </div>
               <div>
                 <Icon type="car" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Insurance
-                </Title>
+                <Text strong>Insurance</Text>
               </div>
               <div>
                 <Icon type="rest" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Bukateria
-                </Title>
+                <Text strong>Bukateria</Text>
               </div>
             </div>
             <div>
               <div>
                 <Icon type="home" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Home Services
-                </Title>
+                <Text strong>Home Services</Text>
               </div>
               <div>
                 <Icon type="car" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Dealer
-                </Title>
+                <Text strong>Dealer</Text>
               </div>
               <div>
                 <Icon
@@ -67,21 +51,15 @@ const welcome = () => {
                   theme="twoTone"
                   twoToneColor="#eb2f96"
                 />{' '}
-                <Title level={4} strong>
-                  Clinics
-                </Title>
+                <Text strong>Clinics</Text>
               </div>
               <div>
                 <Icon type="home" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Clubs
-                </Title>
+                <Text strong>Clubs</Text>
               </div>
               <div>
                 <Icon type="home" theme="twoTone" twoToneColor="#eb2f96" />{' '}
-                <Title level={4} strong>
-                  Torrist
-                </Title>
+                <Text strong>Torrist</Text>
               </div>
             </div>
           </div>
@@ -101,33 +79,29 @@ const welcome = () => {
         </div>
         <div>
           <div className="text-dark card  ">
-            <Title level={4} underline style={styles}>
-              How Does it works
-            </Title>
+            <Text strong underline>
+              How does it work
+            </Text>
             <div>
-              <Title level={4} style={styles}>
-                1. Accept geolocation from browser location request
-              </Title>
+              <Text strong>
+                1. Accept geolocation request from browser location request
+              </Text>
             </div>
             <div>
-              <Title level={4} style={styles}>
-                2. use chrome browser for better perfomance
-              </Title>
+              <Text strong>2. Use chrome browser for better perfomance</Text>
             </div>
             <div>
-              <Title level={4} style={styles}>
+              <Text strong>
                 3. Distance is calculated based on your current location
-              </Title>
+              </Text>
             </div>
             <div>
-              <Title level={4} style={styles}>
-                4.Search results is not lost
-              </Title>
+              <Text strong>4.Search results is not lost</Text>
             </div>
           </div>
           <div className="card">
-            <Text style={styles}>
-              using mobile GPS to track each Enterprise location is under
+            <Text>
+              Using mobile GPS to track each Enterprise location is under
               development....{' '}
               <Icon type="smile" theme="twoTone" twoToneColor="red" />
             </Text>
@@ -138,7 +112,4 @@ const welcome = () => {
   );
 };
 
-const styles = {
-  color: '#fff'
-};
 export default welcome;

@@ -6,7 +6,7 @@ import { getEntDetails, ClearEntDeatils } from '../../action/dataAction';
 import { Link, withRouter } from 'react-router-dom';
 
 const searchItem = props => {
-  //const { Meta } = Card;
+ 
   const {  enterprice } = props;
   //?icon
   const IconText = ({ type, text, theme, twoToneColor }) => (
@@ -95,9 +95,7 @@ const searchItem = props => {
     />
   );
 };
-const styles = {
-  color: '#fff'
-};
+
 export default connect(null, { getEntDetails, ClearEntDeatils })(
   withRouter(searchItem)
 );

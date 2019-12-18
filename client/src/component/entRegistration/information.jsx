@@ -24,21 +24,21 @@ const information = props => {
   };
 
   const { values, onhandleChange, prevStep, nextStep } = props;
-  //console.log(props.values);
+ 
 
   const { validateFields, getFieldDecorator } = props.form;
 
   const next = e => {
     validateFields((err, value) => {
       if (!err) {
-        console.log(value);
+        
         onhandleChange(value);
         nextStep();
       }
     });
   };
   const normFile = e => {
-    console.log('Upload event:', e);
+    
     if (Array.isArray(e)) {
       return e;
     }

@@ -16,7 +16,7 @@ const Details = props => {
 
   //?client co-ordinate fro usePosition hooks
   const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
-  console.log(latitude, longitude, error, accuracy, timestamp);
+  
   return (
     <div className="container c">
       <div className="card">

@@ -28,7 +28,7 @@ export const GetLocation = input => async dispatch => {
       }
     );
     if (res.data === undefined) throw new Error();
-    console.log(res.data);
+  
 
     dispatch({
       type: GEO_SEARCH,
