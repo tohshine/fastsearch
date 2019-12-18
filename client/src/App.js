@@ -33,7 +33,7 @@ function App() {
                 <Route  path="/create_account" component={Register} />
                 <Route exact path="/" component={Welcome} />
                 <Route  path="/details/:id" component={details}/>
-                <Route  path="/search" component={search} />
+                <Route  path="/find" component={search} />
                 <PrivateRoute  path="/start" component={EntRegistration} />
                 <Route  path="/login" component={Login} />
                 <Route  component={NotFound}/>

@@ -74,7 +74,7 @@ const welcome = () => {
           <br />
           <br />
           <Button type="danger" block style={{ height: '50px' }}>
-            <Link to="/search">Fast Search</Link>
+            <Link to="/find">Fast Search</Link>
           </Button>
         </div>
         <div>

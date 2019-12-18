@@ -81,7 +81,7 @@ const BioData = props => {
   return (
     <div className="container">
       <Button type="danger" className="m-1">
-        <Link to="/search">
+        <Link to="/find">
           <Icon type="left" /> Go Back
         </Link>
       </Button>
