@@ -7,9 +7,6 @@ app.use(express.json({ extended: false }));
 app.use(fileUploader());
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-  res.send('<h1>welcome to fast search</h1>');
-});
 
 app.use('/account', require('./data/account'));
 app.use('/create_account', require('./data/auth/register'));
