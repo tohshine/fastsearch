@@ -27,7 +27,11 @@ const accountSchema = mongoose.Schema({
   },
   imageUrl: {
     type: String,
-    required: true
+    required: false
+  },
+  public_id: {
+    type: String,
+    required: false
   },
   tel: {
     type: String,

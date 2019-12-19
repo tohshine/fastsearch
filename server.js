@@ -5,7 +5,13 @@ const fileUploader = require('express-fileupload');
 const path = require('path');
 
 app.use(express.json({ extended: false }));
-app.use(fileUploader());
+app.use(
+  fileUploader({
+    useTempFiles: true
+  })
+);
+
+
 const PORT = process.env.PORT || 5000;
 
 app.use('/account', require('./data/account'));

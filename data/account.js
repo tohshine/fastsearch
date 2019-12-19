@@ -4,7 +4,15 @@ const middleware = require('../middleware/getAuth');
 const uploads = require('../middleware/uploads');
 const User = require('../model/user');
 const Account = require('../model/account');
-const { check, validationResult } = require('express-validator');
+const { check } = require('express-validator');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: 'dlecos9op',
+  api_key: 983418221254412,
+  api_secret: '8FVZTP4Lzz1apRqj9KpUVLFsHYM'
+});
+
 /**
  * ?desc        admin user adding enterprise data
  * ?Access      private
@@ -32,8 +40,8 @@ router.post(
   ],
   async (req, res) => {
     try {
-      if (req.user.id && req.image) {
-        const { fileName, filePath } = req.image;
+      if (req.user.id || req.imageData) {
+        const { url, public_id } = req.imageData;
         const {
           name,
           email,
@@ -52,16 +60,17 @@ router.post(
           category,
           siteUrl,
           services,
-          imageUrl: `https://fastsearch.herokuapp.com/${filePath}`,
+          imageUrl: `${url}`,
           tel,
           address,
           cord_lat,
           cord_long,
           location,
+          public_id,
           user: req.user.id
         });
 
-        await account.save();
+         await account.save();
         return res.status(200).json(account);
       }
     } catch (error) {
@@ -95,12 +104,9 @@ router.get('/', middleware, async (req, res) => {
 router.put('/:id', middleware, uploads, async (req, res) => {
   try {
     const ent = await Account.findById(req.params.id);
-    if (!ent) return res.status(404).send('not found');
-    
+    if (!ent) return res.status(404).send('Enterprise not found');
 
     if (ent.user.toString() === req.user.id.toString()) {
-      
-
       const {
         name,
         email,
@@ -115,31 +121,30 @@ router.put('/:id', middleware, uploads, async (req, res) => {
         location
       } = req.body;
 
-      const { fileName, filePath } = req.image;
-      const updateAccount = {};
+      if (req.user.id || req.imageData) {
+        const { url, public_id } = req.imageData;
+        const updateAccount = {};
 
-      if (name) updateAccount.name = name;
-      if (email) updateAccount.email = email;
-      if (category) updateAccount.category = category;
-      if (siteUrl) updateAccount.siteUrl = siteUrl;
-      if (services) updateAccount.services = services;
-      if (tel) updateAccount.tel = tel;
-      if (address) updateAccount.address = address;
-      if (location) updateAccount.location = location;
-      if (imageUrl)
-        updateAccount.imageUrl = `https://fastsearch.herokuapp.com/${filePath}`;
+        if (name) updateAccount.name = name;
+        if (email) updateAccount.email = email;
+        if (category) updateAccount.category = category;
+        if (siteUrl) updateAccount.siteUrl = siteUrl;
+        if (services) updateAccount.services = services;
+        if (tel) updateAccount.tel = tel;
+        if (address) updateAccount.address = address;
+        if (location) updateAccount.location = location;
+        if (imageUrl) updateAccount.imageUrl = `${url}`;
+        updateAccount.public_id = public_id;
+        if (cord_lat) updateAccount.cord_lat = cord_lat;
+        if (cord_long) updateAccount.cord_long = cord_long;
 
-      if (cord_lat) updateAccount.cord_lat = cord_lat;
-      if (cord_long) updateAccount.cord_long = cord_long;
-
-      console.log('reach here');
-
-      const enterprise = await Account.findByIdAndUpdate(
-        req.params.id,
-        updateAccount,
-        { new: true }
-      );
-      return res.status(200).json(enterprise);
+        const enterprise = await Account.findByIdAndUpdate(
+          req.params.id,
+          updateAccount,
+          { new: true }
+        );
+        return res.status(200).json(enterprise);
+      }
     }
 
     return res.status(403).send('forbidden error');

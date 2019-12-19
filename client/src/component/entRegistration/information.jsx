@@ -24,24 +24,33 @@ const information = props => {
   };
 
   const { values, onhandleChange, prevStep, nextStep } = props;
- 
 
   const { validateFields, getFieldDecorator } = props.form;
 
-  const next = e => {
+  const next = () => {
     validateFields((err, value) => {
       if (!err) {
-        
-        onhandleChange(value);
-        nextStep();
+        const img =value.image[0]
+        if (
+          img.type === 'image/png' ||
+          img.type === 'image/jpg' ||
+          img.type === 'image/jpeg'
+        ) {
+          onhandleChange(value);
+           nextStep();
+        } else {
+          message.error('File format not supported!!');
+          console.log(value.image);
+          
+        }
       }
     });
   };
   const normFile = e => {
-    
     if (Array.isArray(e)) {
       return e;
     }
+
     return e && e.fileList;
   };
 
@@ -52,11 +61,12 @@ const information = props => {
           <Text>step 2 of 3</Text>
           <Title>Information</Title>
           <Form {...formItemLayout}>
-            <Form.Item label="Upload" extra="picture must be 1400 x 500">
+            <Form.Item label="upload" extra="picture must be 1400 x 500">
               {getFieldDecorator('image', {
-                rules: [{ required: true, message: 'upload an image' }],
+                rules: [{ required: false, message: 'upload an image' }],
                 valuePropName: 'fileList',
-                getValueFromEvent: normFile
+                getValueFromEvent: normFile,
+                
               })(
                 <Upload name="logo" listType="picture">
                   <Button>
@@ -66,18 +76,18 @@ const information = props => {
               )}
             </Form.Item>
 
-            <Form.Item label="url">
+            <Form.Item label="website Url">
               {getFieldDecorator('siteUrl', {
                 rules: [{ required: true, message: 'Please input website!' }],
                 initialValue: `${values.siteUrl}`
               })(
                 <AutoComplete placeholder="website">
-                  <Input />
+                  <Input  />
                 </AutoComplete>
               )}
             </Form.Item>
 
-            <Form.Item label="services">
+            <Form.Item label="Services">
               {getFieldDecorator('services', {
                 rules: [
                   {

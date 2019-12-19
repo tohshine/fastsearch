@@ -88,7 +88,7 @@ const BioData = props => {
       <div className=" card grid-2">
         <div className="card bg-light">
           <Text>step 1 of 3</Text>
-          <Title>Bio data</Title>
+          <Title>Company Bio data</Title>
           <Form {...formItemLayout}>
             {/*  //?name */}
             <Form.Item label="Name">

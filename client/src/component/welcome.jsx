@@ -5,14 +5,26 @@ import { Link } from 'react-router-dom';
 const welcome = () => {
   const { Title, Text } = Typography;
   return (
-    <div className="container" >
-      <div className="grid-2" style={{alignItems:"center",justifyContent:"center" ,marginTop:100}}>
-        <div className="card bg-light">
-          <Title level={4} className="text-dark">
+    <div className="container">
+      <section>
+        <div style={style}>
+          <Title level={2} style={{ color: '#fff' }}>
             Fast Search To Locate Any Buisness{' '}
             <span className="text-danger">Enterprise</span> Around You{' '}
           </Title>
-
+          <p style={{ color: '#fff' }}>
+            ....Relax and use our services to locate where you want go today!!
+          </p>
+        </div>
+      </section>
+      <div
+        className="grid-2"
+        style={{ alignItems: 'center', justifyContent: 'center' }}
+      >
+        <div className="card bg-light">
+          <Title level={3} underline>
+            Services
+          </Title>
           <div className="grid-2">
             <div>
               <div>
@@ -79,28 +91,32 @@ const welcome = () => {
         </div>
         <div>
           <div className="text-dark card  ">
-            <Text strong underline>
+            <Text strong underline style={blue}>
               How does it work
             </Text>
             <div>
-              <Text strong>
+              <Text strong style={blue}>
                 1. Accept geolocation request from browser location request
               </Text>
             </div>
             <div>
-              <Text strong>2. Use chrome browser for better perfomance</Text>
+              <Text strong style={blue}>
+                2. Use chrome browser for better perfomance
+              </Text>
             </div>
             <div>
-              <Text strong>
+              <Text strong style={blue}>
                 3. Distance is calculated based on your current location
               </Text>
             </div>
             <div>
-              <Text strong>4.Search results is not lost</Text>
+              <Text strong style={blue}>
+                4.Search results is not lost
+              </Text>
             </div>
           </div>
           <div className="card">
-            <Text>
+            <Text style={blue}>
               Using mobile GPS to track each Enterprise location is under
               development....{' '}
               <Icon type="smile" theme="twoTone" twoToneColor="red" />
@@ -111,5 +127,17 @@ const welcome = () => {
     </div>
   );
 };
+const style = {
+  fontFamily: 'Helvetica Neue',
+  marginTop: '0rem',
+  left: '0',
+  position: 'absolute',
+  textAlign: 'center',
+  top: '30px',
+  width: '100%'
+};
 
+const blue = {
+  color: '#fff'
+};
 export default welcome;

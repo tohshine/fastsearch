@@ -9,15 +9,20 @@ const topHeader = () => {
   const { Text } = Typography;
   return (
     <Layout>
-      <Footer className=" text-center" style={{ height: '50' }}>
-        <Text>made with </Text>
-        <Icon type="heart" theme="filled" style={{color:'#eb2f96'}} />{' '}
+      <Footer
+        className=" text-center"
+        style={{ height: '50', backgroundColor: '#6F1E51', color: '#fff' }}
+      >
+        <Text style={{ color: '#fff' }}>made with </Text>
+        <Icon type="heart" theme="filled" style={{ color: '#eb2f96' }} />{' '}
         <Text strong>
           {' '}
-          by Tohshine | <IconFont type="icon-facebook" style={{color:'blue'}} /> Tohshine
-          | <IconFont type="icon-twitter" style={{color:'#00a8ff'}}/> Tohshine
+          <span style={{ color: '#fff' }}> By Tohshine |</span>{' '}
+          <IconFont type="icon-facebook" style={{ color: 'blue' }} />{' '}
+          <span style={{ color: '#fff' }}>Tohshine |</span>{' '}
+          <IconFont type="icon-twitter" style={{ color: '#00a8ff' }} />{' '}
+          <span style={{ color: '#fff' }}>Tohshine</span>
         </Text>
-        
       </Footer>
     </Layout>
   );

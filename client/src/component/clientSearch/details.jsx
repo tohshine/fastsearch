@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getEntDetails, ClearEntDeatils } from '../../action/dataAction';
-import { Typography, Avatar, Tag, Icon,Spin } from 'antd';
+import { Typography, Avatar, Tag, Icon, Spin } from 'antd';
 import { usePosition } from 'use-position';
 import calculator from '../calculator';
 const Details = props => {
@@ -16,20 +16,20 @@ const Details = props => {
 
   //?client co-ordinate fro usePosition hooks
   const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
-  
+
   return (
     <div className="container c">
       <div className="card">
         <div className="card bg-light">
           {profile === null ? (
-             <div className="text-center">
-             {' '}
-             <Spin size="large" />
-           </div>
+            <div className="text-center">
+              {' '}
+              <Spin size="large" />
+            </div>
           ) : (
             <Fragment>
               <div className="card grid-2">
-                <div className="">
+                <div>
                   <div className="text-center">
                     <Avatar size={100} icon="user" src={profile.imageUrl} />
                   </div>
@@ -57,6 +57,7 @@ const Details = props => {
                     </Text>
                   </div>
                 </div>
+
                 <div>
                   <Title level={3}>{profile.name}</Title>
                   <div style={{ marginTop: '10px', marginBottom: '10px' }}>

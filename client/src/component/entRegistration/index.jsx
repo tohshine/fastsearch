@@ -30,7 +30,8 @@ const Form = props => {
     tel: '',
     address: '',
     imageUrl: '',
-    location: ''
+    location: '',
+    public_id:''
   });
 
   const nextStep = () => {
@@ -58,7 +59,8 @@ const Form = props => {
     address,
     image,
     _id,
-    imageUrl
+    imageUrl,
+    public_id
   } = form;
 
   const onSubmit = e => {
@@ -78,7 +80,9 @@ const Form = props => {
       formData.append('cord_long', address.cords.lng);
       formData.append('imageUrl', imageUrl);
       formData.append('location', location);
-
+      //?public id is a key use to overwrite current image in cloudinary then link use to update DB
+      formData.append('public_id',public_id)
+       //?editing form
       props.editProfile(form._id, formData);
 
       message.success('Data updated');
