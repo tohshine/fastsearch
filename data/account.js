@@ -52,7 +52,7 @@ router.post(
           category,
           siteUrl,
           services,
-          imageUrl: `http://localhost:3000/${filePath}`,
+          imageUrl: `https://fastsearch.herokuapp.com/${filePath}`,
           tel,
           address,
           cord_lat,
