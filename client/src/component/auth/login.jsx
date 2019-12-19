@@ -64,7 +64,7 @@ const LoginFile = props => {
           })(
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Eamil"
+              placeholder="Email"
             />
           )}
         </Form.Item>
