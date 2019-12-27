@@ -42,7 +42,7 @@ const GetStarted = props => {
   if (isAuth) return <Redirect to="/start" />;
   const { Title } = Typography;
   return (
-    <div className="form-container card">
+    <div className="form-container ">
       <div className="card bg-light">
         <Title className="text-dark">Account Creation</Title>
 

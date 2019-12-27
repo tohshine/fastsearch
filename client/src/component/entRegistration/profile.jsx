@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Avatar, Tag, Typography, Descriptions,Spin } from 'antd';
+import { Button, Avatar, Tag, Typography, Descriptions, Spin } from 'antd';
 import { connect } from 'react-redux';
 import { getProfile, clearErrors } from '../../action/dataAction';
 const Profile = ({
@@ -11,21 +11,20 @@ const Profile = ({
   auth
 }) => {
   const { Text } = Typography;
- 
+
   useEffect(() => {
     getProfile();
     return () => {
       clearErrors();
     };
   }, []);
-  const {companyProfile,loading}= profile
+  const { companyProfile, loading } = profile;
   const editConfig = () => {
     onhandleChange(companyProfile);
-    
-    
+
     nextStep();
   };
-  
+
   return (
     <div className="container">
       <div className="card">
@@ -50,22 +49,27 @@ const Profile = ({
         </div>
 
         <div className="card bg-light">
-          {companyProfile ===null && loading ?<Text style={{textAlign:'center'}}>No data please add</Text>:
-          companyProfile === null &&!loading? (
+          {companyProfile === null && loading ? (
+            <Spin size="small" Tag="loading..." className="text-center" />
+          ) : companyProfile === null && !loading ? (
             <div className="text-center">
               <div className="text-center">
-              {' '}
-              <Spin size="large" />
-            </div>
+                {' '}
+                <Text style={{ textAlign: 'center' }}>No data please add</Text>
+              </div>
             </div>
           ) : (
             <Descriptions title="Enterprise Info">
-              <Descriptions.Item label="Name">{companyProfile.name}</Descriptions.Item>
+              <Descriptions.Item label="Name">
+                {companyProfile.name}
+              </Descriptions.Item>
               <Descriptions.Item label="Email">
                 {companyProfile.email}
               </Descriptions.Item>
 
-              <Descriptions.Item label="Tel">{companyProfile.tel}</Descriptions.Item>
+              <Descriptions.Item label="Tel">
+                {companyProfile.tel}
+              </Descriptions.Item>
               <Descriptions.Item label="Address">
                 {companyProfile.address}
               </Descriptions.Item>
@@ -79,7 +83,11 @@ const Profile = ({
                 <a href="#!">{companyProfile.siteUrl}</a>
               </Descriptions.Item>
               <Descriptions.Item label="Picture">
-                <Avatar shape="square" size={100} src={companyProfile.imageUrl} />
+                <Avatar
+                  shape="square"
+                  size={100}
+                  src={companyProfile.imageUrl}
+                />
               </Descriptions.Item>
               <Descriptions.Item label="Location">
                 {companyProfile.location}
@@ -88,11 +96,11 @@ const Profile = ({
           )}
         </div>
         {!companyProfile ? (
-          <Button   type="primary" style={{width:"100px"}}onClick={nextStep}>
+          <Button type="primary" style={{ width: '100px' }} onClick={nextStep}>
             add
           </Button>
         ) : (
-          <Button  type="danger" onClick={editConfig}>
+          <Button type="danger" onClick={editConfig}>
             Edit configuration
           </Button>
         )}

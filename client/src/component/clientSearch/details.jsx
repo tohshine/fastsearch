@@ -18,43 +18,49 @@ const Details = props => {
   const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 
   return (
-    <div className="container c">
+    <div className="container">
       <div className="card">
         <div className="card bg-light">
           {profile === null ? (
             <div className="text-center">
               {' '}
-              <Spin size="large" />
+              <Spin size="small" tip="Loading..." />
             </div>
           ) : (
             <Fragment>
               <div className="card grid-2">
                 <div>
-                  <div className="text-center">
-                    <Avatar size={100} icon="user" src={profile.imageUrl} />
-                  </div>
-
-                  <div className="m-1 text-center">
-                    <Text strong>status:</Text> <Tag color="green">Active</Tag>
-                  </div>
-                  <div className="m-1 text-center">
-                    <Tag color="blue" style={{ width: '100px' }}>
-                      Location
-                    </Tag>{' '}
-                    <Text strong>{profile.location} state</Text>
-                  </div>
-                  <div className="m-1 text-center">
-                    <Tag color="red" style={{ width: '100px' }}>
-                      Distance
-                    </Tag>{' '}
-                    <Text type="secondary">
-                      {calculator(
-                        latitude,
-                        longitude,
-                        profile.cord_lat,
-                        profile.cord_long
-                      )}
-                    </Text>
+                  <div
+                   
+                    className="text-center"
+                  >
+                    <p>
+                      <Avatar size={100} icon="user" src={profile.imageUrl} />
+                    </p>
+                    <p>
+                      <Text strong>
+                        status: <Tag color="green">Active</Tag>
+                      </Text>
+                    </p>
+                    <p>
+                      <Tag color="blue" style={{ width: '65px' }}>
+                        Location :
+                      </Tag>
+                      <Text strong>{profile.location} state</Text>
+                    </p>
+                    <p>
+                      <Tag color="red" style={{ width: '65px' }}>
+                        Distance
+                      </Tag>{' '}
+                      <Text type="secondary">
+                        {calculator(
+                          latitude,
+                          longitude,
+                          profile.cord_lat,
+                          profile.cord_long
+                        )}
+                      </Text>
+                    </p>
                   </div>
                 </div>
 
@@ -98,6 +104,10 @@ const Details = props => {
       </div>
     </div>
   );
+};
+
+const style = {
+  display: 'inline-block'
 };
 const mapStateToProps = state => ({
   profile: state.profile.companyDetails

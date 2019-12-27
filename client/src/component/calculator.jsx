@@ -1,4 +1,5 @@
 function calculateDistance(lat1, long1, lat2, long2) {
+  if (!lat1 && lat2) return ' Your location off';
   //radians
   lat1 = (lat1 * 2.0 * Math.PI) / 60.0 / 360.0;
   long1 = (long1 * 2.0 * Math.PI) / 60.0 / 360.0;
@@ -23,9 +24,6 @@ function calculateDistance(lat1, long1, lat2, long2) {
   y -= beta * cos * Math.sin(long2);
   z -= beta * (1 - e) * Math.sin(lat2);
 
-  return (
-    Math.floor(Math.sqrt(x * x + y * y + z * z) / 1000) +
-    'Km to your destination'
-  );
+  return Math.floor(Math.sqrt(x * x + y * y + z * z) / 1000) + 'KM';
 }
 export default calculateDistance;

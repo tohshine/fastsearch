@@ -11,21 +11,25 @@ const topHeader = () => {
     <Layout>
       <Footer
         className=" text-center"
-        style={{ height: '50', backgroundColor: '#6F1E51', color: '#fff' }}
+        style={style}
       >
-        <Text style={{ color: '#fff' }}>made with </Text>
+        <Text style={style}>made with </Text>
         <Icon type="heart" theme="filled" style={{ color: '#eb2f96' }} />{' '}
         <Text strong>
           {' '}
-          <span style={{ color: '#fff' }}> By Tohshine |</span>{' '}
+          <span style={style}> By Tohshine |</span>{' '}
           <IconFont type="icon-facebook" style={{ color: 'blue' }} />{' '}
-          <span style={{ color: '#fff' }}>Tohshine |</span>{' '}
+          <span style={style}>Tohshine |</span>{' '}
           <IconFont type="icon-twitter" style={{ color: '#00a8ff' }} />{' '}
-          <span style={{ color: '#fff' }}>Tohshine</span>
+          <span style={style}>Tohshine</span>
         </Text>
       </Footer>
     </Layout>
   );
 };
 
+const style={
+  color:'#fff',
+  backgroundColor:'#003459'
+}
 export default topHeader;

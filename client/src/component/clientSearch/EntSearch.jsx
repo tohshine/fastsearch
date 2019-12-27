@@ -6,7 +6,6 @@ import {
   Form,
   Input,
   Icon,
-
   Button,
   Typography,
   Spin,
@@ -104,6 +103,7 @@ const EntSearch = props => {
         </div>
       </div>
     </div>
+
   );
 };
 

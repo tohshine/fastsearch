@@ -3,6 +3,7 @@ import { List, Avatar, Icon, Typography } from 'antd';
 import { connect } from 'react-redux';
 import { getEntDetails, ClearEntDeatils } from '../../action/dataAction';
 
+
 import { Link, withRouter } from 'react-router-dom';
 
 const searchItem = props => {

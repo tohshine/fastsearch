@@ -9,7 +9,7 @@ const welcome = () => {
       <section>
         <div style={style}>
           <Title level={2} style={{ color: '#fff' }}>
-            Fast Search To Locate Any Buisness{' '}
+            Locate Any Buisness{' '}
             <span className="text-danger">Enterprise</span> Around You{' '}
           </Title>
           <p style={{ color: '#fff' }}>
@@ -117,7 +117,7 @@ const welcome = () => {
           </div>
           <div className="card">
             <Text style={blue}>
-              Using mobile GPS to track each Enterprise location is under
+               Mobile GPS  tracking on each Enterprise locations is under
               development....{' '}
               <Icon type="smile" theme="twoTone" twoToneColor="red" />
             </Text>
@@ -128,7 +128,7 @@ const welcome = () => {
   );
 };
 const style = {
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'BioRhyme',
   marginTop: '0rem',
   left: '0',
   position: 'absolute',

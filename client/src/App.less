@@ -1,3 +1,4 @@
+@import (css)url(https://fonts.googleapis.com/css?family=BioRhyme|Cabin|Lobster&display=swap);
 /* Global Styles */
 :root {
   --primary-color: #003699;
@@ -14,10 +15,11 @@
 }
 
 .body {
-  color: #333;
-  display: flex;
+  color: var(--light-color);
+    display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: 'Cabin', sans-serif;
 }
 
 a {
@@ -392,6 +394,7 @@ table th {
 }
 
 /* Animation (Add After) */
+/* Animation (Add After) */
 .item-enter {
   opacity: 0;
 }
@@ -450,7 +453,7 @@ table th {
 
 .content {
   flex: 1 0 auto;
-  background: #6f1e51;
+  background: #003459;
   background-size: cover;
   background-position: center;
   min-height: 250px;

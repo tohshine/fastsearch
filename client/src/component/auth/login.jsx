@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login, clearErrors, setLoading } from '../../action/authAction';
 import { Redirect } from 'react-router-dom';
-import alert from '../../layout/Alert';
+
 
 const LoginFile = props => {
   const { getFieldDecorator, validateFields } = props.form;
@@ -42,7 +42,7 @@ const LoginFile = props => {
   if (isAuth) return <Redirect to="/start" />;
   return (
 
-    <div className="form-container card">
+    <div className="form-container ">
     <div className="card bg-light">
       <Title>Login</Title>
       {error && (

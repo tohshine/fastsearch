@@ -24,7 +24,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.9",
     "nodemailer": "^6.4.1",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "rc-tween-one": "^2.6.8",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "concurrently": "^5.0.0",
