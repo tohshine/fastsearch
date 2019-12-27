@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { Button, Avatar, Tag, Typography, Descriptions, Spin } from 'antd';
 import { connect } from 'react-redux';
-import { getProfile, clearErrors } from '../../action/dataAction';
+import { getProfile, clearErrors, setLoading } from '../../action/dataAction';
 const Profile = ({
   nextStep,
   onhandleChange,
   getProfile,
   clearErrors,
   profile,
-  auth
+  auth,
+  setLoading
 }) => {
   const { Text } = Typography;
 
   useEffect(() => {
+    setLoading();
     getProfile();
     return () => {
       clearErrors();
@@ -49,11 +51,13 @@ const Profile = ({
         </div>
 
         <div className="card bg-light">
-          { companyProfile === null && loading ? (
+          {companyProfile === null && loading ? (
+            <Spin size="small" Tag="loading..." className="text-center" />
+          ) : companyProfile === null && !loading ? (
             <div className="text-center">
               <div className="text-center">
                 {' '}
-                <Spin size="small" Tag="loading..." className="text-center" />
+                <Text style={{ textAlign: 'center' }}>No data please add</Text>
               </div>
             </div>
           ) : (
@@ -110,4 +114,8 @@ const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth.user
 });
-export default connect(mapStateToProps, { getProfile, clearErrors })(Profile);
+export default connect(mapStateToProps, {
+  getProfile,
+  clearErrors,
+  setLoading
+})(Profile);

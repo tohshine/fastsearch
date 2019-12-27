@@ -19,7 +19,7 @@ const initialState = {
   companies: null,
   companyDetails: null,
   filteredCompany: null,
-  loading:true
+  loading:false
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -48,6 +48,11 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         companyProfile: action.payload
       };
+      case SET_PROFILE_LOADING:
+        return{
+          ...state,
+          loading:true
+        }
     //?clent part
     case GET_ALL_ENT:
       return {
