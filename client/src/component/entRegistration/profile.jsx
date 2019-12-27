@@ -52,7 +52,9 @@ const Profile = ({
 
         <div className="card bg-light">
           {companyProfile === null && loading ? (
-            <Spin size="small" Tag="loading..." className="text-center" />
+            <div className="text-center">
+              <Spin size="small" Tag="loading..." className="text-center" />
+            </div>
           ) : companyProfile === null && !loading ? (
             <div className="text-center">
               <div className="text-center">

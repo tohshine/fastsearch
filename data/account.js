@@ -80,14 +80,13 @@ router.post(
   }
 );
 /**
- * ?desc        admin get data from input ent
+ * ?desc        get company profile
  * ?Access      private
  * ?Request     GET /account
  */
 router.get('/', middleware, async (req, res) => {
   try {
     const ent = await Account.findOne({ user: req.user.id });
-    if (!ent) return res.status(404).send('account not found');
     return res.status(200).json(ent);
   } catch (error) {
     console.log(error.message);
