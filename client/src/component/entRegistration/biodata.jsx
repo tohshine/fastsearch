@@ -28,8 +28,14 @@ const BioData = props => {
     labelCol: { span: 6 },
     wrapperCol: { span: 14 }
   };
-  const { values, onhandleChange, nextStep, geoAddress, state } = props;
- 
+  const {
+    values,
+    onhandleChange,
+    nextStep,
+    geoAddress,
+    state,
+    prevStep
+  } = props;
 
   //? antd api
   const { validateFields, getFieldDecorator } = props.form;
@@ -44,9 +50,6 @@ const BioData = props => {
     if (userLoc.location === '') return errorNotification();
     validateFields((err, values) => {
       if (!err) {
-       
-
-       
         onhandleChange(values);
         nextStep();
       }
@@ -80,10 +83,14 @@ const BioData = props => {
 
   return (
     <div className="container">
-      <Button type="danger" className="m-1">
-        <Link to="/find">
-          <Icon type="left" /> Go Back
-        </Link>
+      <Button
+        type="danger"
+        className="m-1"
+        onClick={() => {
+          prevStep();
+        }}
+      >
+        Go Back
       </Button>
       <div className=" card grid-2">
         <div className="card bg-light">

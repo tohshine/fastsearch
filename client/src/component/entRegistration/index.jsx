@@ -129,6 +129,7 @@ const Form = props => {
       return (
         <BioData
           nextStep={nextStep}
+          prevStep={prevStep}
           onhandleChange={onhandleChange}
           values={values}
         />
