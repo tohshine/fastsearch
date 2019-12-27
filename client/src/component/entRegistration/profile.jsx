@@ -96,23 +96,21 @@ const Profile = ({
               <Descriptions.Item label="Location">
                 {companyProfile.location}
               </Descriptions.Item>
-
-              <Descriptions.Item>
-                {companyProfile === null ? (
-                  <Button
-                    type="primary"
-                    style={{ width: '100px' }}
-                    onClick={nextStep}
-                  >
-                    add
-                  </Button>
-                ) : (
-                  <Button type="danger" onClick={editConfig}>
-                    Edit configuration
-                  </Button>
-                )}
-              </Descriptions.Item>
             </Descriptions>
+          )}
+
+          {companyProfile === null && !loading ? (
+            <Button
+              type="primary"
+              style={{ width: '100px' }}
+              onClick={nextStep}
+            >
+              Add Data
+            </Button>
+          ) : (
+            <Button type="danger" onClick={editConfig}>
+              Edit Configuration
+            </Button>
           )}
         </div>
       </div>
