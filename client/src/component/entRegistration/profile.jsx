@@ -49,13 +49,11 @@ const Profile = ({
         </div>
 
         <div className="card bg-light">
-          {companyProfile === null && loading ? (
-            <Spin size="small" Tag="loading..." className="text-center" />
-          ) : companyProfile === null && !loading ? (
+          { companyProfile === null && loading ? (
             <div className="text-center">
               <div className="text-center">
                 {' '}
-                <Text style={{ textAlign: 'center' }}>No data please add</Text>
+                <Spin size="small" Tag="loading..." className="text-center" />
               </div>
             </div>
           ) : (
