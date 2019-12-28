@@ -39,7 +39,7 @@ const GetStarted = props => {
     });
   };
 
-  if (isAuth) return <Redirect to="/" />;
+  if (isAuth) return <Redirect to="/start" />;
   const { Title } = Typography;
   return (
     <div className="form-container ">
