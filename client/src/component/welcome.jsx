@@ -117,17 +117,17 @@ const welcome = () => {
           </div>
           <div className="card">
             <Title level={4} style={blue}>
-              video demostration
+              Video Demonstration
             </Title>
             <iframe
-              width="560"
+              width="315"
               height="315"
               src="https://www.youtube.com/embed/sJPao64Ok0U"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
-            <Text style={blue}>
+            <Text style={blue}><br/>
               Mobile GPS tracking on each Enterprise locations is under
               development....{' '}
               <Icon type="smile" theme="twoTone" twoToneColor="red" />
