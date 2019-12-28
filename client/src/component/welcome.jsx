@@ -9,8 +9,8 @@ const welcome = () => {
       <section>
         <div style={style}>
           <Title level={2} style={{ color: '#fff' }}>
-            Locate Any Buisness{' '}
-            <span className="text-danger">Enterprise</span> Around You{' '}
+            Locate Any Buisness <span className="text-danger">Enterprise</span>{' '}
+            Around You{' '}
           </Title>
           <p style={{ color: '#fff' }}>
             ....Relax and use our services to locate where you want go today!!
@@ -22,7 +22,7 @@ const welcome = () => {
         style={{ alignItems: 'center', justifyContent: 'center' }}
       >
         <div className="card bg-light">
-          <Title level={3} underline style={{color:"00171F"}}>
+          <Title level={3} underline style={{ color: '00171F' }}>
             Services
           </Title>
           <div className="grid-2">
@@ -116,8 +116,19 @@ const welcome = () => {
             </div>
           </div>
           <div className="card">
+            <Title level={4} style={blue}>
+              video demostration
+            </Title>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/sJPao64Ok0U"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
             <Text style={blue}>
-               Mobile GPS  tracking on each Enterprise locations is under
+              Mobile GPS tracking on each Enterprise locations is under
               development....{' '}
               <Icon type="smile" theme="twoTone" twoToneColor="red" />
             </Text>
