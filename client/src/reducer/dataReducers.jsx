@@ -87,7 +87,8 @@ const dataReducer = (state = initialState, action) => {
     case CLEAR_ERRORS:
       return {
         ...state,
-        error: null
+        error: null,
+        companyProfile: null,
       };
     default:
       return state;

@@ -11,7 +11,6 @@ app.use(
   })
 );
 
-
 const PORT = process.env.PORT || 5000;
 
 app.use('/account', require('./data/account'));

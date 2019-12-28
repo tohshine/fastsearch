@@ -22,7 +22,7 @@ const welcome = () => {
         style={{ alignItems: 'center', justifyContent: 'center' }}
       >
         <div className="card bg-light">
-          <Title level={3} underline>
+          <Title level={3} underline style={{color:"00171F"}}>
             Services
           </Title>
           <div className="grid-2">

@@ -36,7 +36,7 @@ const topHeader = ({ auth, logout }) => {
 
         {isAuth && !loading && (
           <Menu.Item key="3">
-            <Link to="/login" style={style}>Resource</Link>
+            <Link to="/start" style={style}>Resource</Link>
           </Menu.Item>
         )}
         <Menu.Item key="4">About</Menu.Item>

@@ -15,7 +15,7 @@ const LoginFile = props => {
     };
   }, []);
 
-  if (isAuth && !loading) {
+  if (isAuth) {
     return <Redirect to="/start" />;
   }
 

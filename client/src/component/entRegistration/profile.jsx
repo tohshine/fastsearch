@@ -108,9 +108,11 @@ const Profile = ({
               Add Data
             </Button>
           ) : (
-            <Button type="danger" onClick={editConfig}>
-              Edit Configuration
-            </Button>
+            companyProfile !== null && !loading && (
+              <Button type="danger" onClick={editConfig}>
+                Edit Configuration
+              </Button>
+            )
           )}
         </div>
       </div>
