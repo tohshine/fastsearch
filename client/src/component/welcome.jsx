@@ -115,7 +115,7 @@ const welcome = () => {
               </Text>
             </div>
           </div>
-          <div className="card">
+          <div className="card text-center">
             <Title level={4} style={blue}>
               Video Demonstration
             </Title>

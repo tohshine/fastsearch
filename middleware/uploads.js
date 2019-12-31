@@ -8,7 +8,10 @@ module.exports = function(req, res, next) {
   console.log(file);
   const properties = {
     public_id: req.body.public_id,
-    quality: 'auto'
+    quality: 'auto',
+    width: 450,
+    height: 450,
+    crop: 'scale'
   };
   cloudinary.uploader.upload(file.tempFilePath, properties, function(
     err,
