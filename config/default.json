@@ -1,4 +1,4 @@
 {
   "MongoURI": "mongodb+srv://tohshine:tosco1234@cluster0-ikq6i.mongodb.net/test",
-  "security": "Secret"
+  "security": "Secret<>{}//.."
 }
