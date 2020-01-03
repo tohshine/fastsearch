@@ -9,7 +9,7 @@ const Account = require('../model/account');
 
 router.get('/', async (req, res) => {
   try {
-    const allEnt = await Account.find().select('user');
+    const allEnt = await Account.find().select('-user');
     return res.status(200).json(allEnt);
   } catch (error) {
     console.log(error.message);
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/profile/:id', async (req, res) => {
   try {
-    const allEnt = await Account.findById(req.params.id).select('user');
+    const allEnt = await Account.findById(req.params.id).select('-user');
     return res.status(200).json(allEnt);
   } catch (error) {
     console.log(error.message);
@@ -40,9 +40,9 @@ router.get('/profile/:id', async (req, res) => {
  */
 
 router.post('/', async (req, res) => {
-  const {category} = req.body;
+  const { category } = req.body;
   try {
-    const allEnt = await Account.find({category:category});
+    const allEnt = await Account.find({ category: category });
     return res.status(200).json(allEnt);
   } catch (error) {
     console.log(error.message);
